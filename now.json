@@ -6,29 +6,39 @@
     "routes": 
     [
         {
-            "src": "/",
+            "src": "/api/",
             "dest": "/index.js",
             "methods": ["GET"]
         },
         {
-            "src": "/home",
+            "src": "/api/home",
             "dest": "/index.js",
             "methods": ["GET"]
         },
         {
-            "src": "/home",
+            "src": "/api/home",
             "dest": "/index.js",
             "methods": ["POST"]
         },
         {
-            "src": "/edit",
+            "src": "/api/edit",
             "dest": "/index.js",
             "methods": ["DELETE"]
         },
         {
-            "src": "/edit",
+            "src": "/api/edit",
             "dest": "/index.js",
             "methods": ["PUT"]
+        },
+        {
+            "src": "/search/price",
+            "dest": "/index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/search/category",
+            "dest": "/index.js",
+            "methods": ["GET"]
         }
     
     ]

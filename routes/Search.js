@@ -1,19 +1,6 @@
 const express = require('express'),
-    bodyParser = require('body-parser'),
-    cors = require('cors'),
-    app = express(),
-    router = express.Router(),
-    fs = require('fs'),
-    db = require('./config/db'),
-    rest = require('./routes/Rest'),
-    search = require('./routes/Search'),
-    webhook = require('./routes/Webhook')
-
-let port = process.env.PORT || 4444
-
-app.use(cors())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }), router)
+    search = express.Router(),
+    db = require('../config/db')
 
 var myhome = [
     {
@@ -50,7 +37,7 @@ var myhome = [
         price: 5000, //บาท
         area: 100, //หน่วยตารางเมตร
         type: "sale", // sale/rent
-        category: "condo" // condo/house
+        category: "house" // condo/house
     },
     {
         id: 3,
@@ -59,23 +46,40 @@ var myhome = [
         description: "คำอธิบาย",
         latitude: 56,
         longitude: 23,
-        price: 5000, //บาท
+        price: 1900, //บาท
         area: 100, //หน่วยตารางเมตร
         type: "sale", // sale/rent
         category: "condo" // condo/house
     }
 ]
 
-app.use('/api', rest)
-app.use('/search', search)
-app.use('/line', webhook)
+search.route('/price')
+    .get((req, res) => {
+
+        const { fPrice, ePrice } = { ...req.body }
+        const item = myhome.filter(item => {
+            if (item.price >= fPrice && item.price <= ePrice)
+                return item
+        })
+
+        res.json(item)
 
 
-app.use("*", (req, res) => res.status(404).send("404 not found"))
-app.listen(port, () => {
-    console.log("server is ok");
+    })
 
-})
+search.route('/category')
+    .get((req, res) => {
+        const category = req.body.category
+        const item = myhome.filter(item => {
+            if (item.category == category)
+                return item
+        })
+
+        res.json(item)
 
 
+
+    })
+
+module.exports = search
 
