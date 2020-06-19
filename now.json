@@ -31,14 +31,24 @@
             "methods": ["PUT"]
         },
         {
-            "src": "/search/price",
+            "src": "/search/myhome",
             "dest": "/index.js",
             "methods": ["GET"]
         },
         {
-            "src": "/search/category",
+            "src": "/search/location",
             "dest": "/index.js",
             "methods": ["GET"]
+        },
+        {
+            "src": "/line/webhook",
+            "dest": "/index.js",
+            "methods": ["GET"]
+        },
+        {
+            "src": "/line/webhook",
+            "dest": "/index.js",
+            "methods": ["POST"]
         }
     
     ]

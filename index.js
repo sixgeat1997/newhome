@@ -7,7 +7,11 @@ const express = require('express'),
     db = require('./config/db'),
     rest = require('./routes/Rest'),
     search = require('./routes/Search'),
-    webhook = require('./routes/Webhook')
+    // webhook = require('./routes/Webhook'),
+    request = require('request')
+   
+    // { WebhookClient } = require('dialogflow-fulfillment')
+
 
 let port = process.env.PORT || 4444
 
@@ -68,7 +72,7 @@ var myhome = [
 
 app.use('/api', rest)
 app.use('/search', search)
-app.use('/line', webhook)
+// app.use('/line', webhook)
 
 
 app.use("*", (req, res) => res.status(404).send("404 not found"))

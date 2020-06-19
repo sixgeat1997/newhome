@@ -12,7 +12,8 @@ var myhome = [
         price: 5000, //บาท
         area: 100, //หน่วยตารางเมตร
         type: "sale", // sale/rent
-        category: "condo" // condo/house
+        category: "condo", // condo/house
+        province: "ภูเก็ต"
     },
     {
         id: 1,
@@ -20,6 +21,7 @@ var myhome = [
         tel: "0954321078",
         description: "คำอธิบาย",
         latitude: 56,
+        province: "สงขลา",
         longitude: 23,
         price: 5000, //บาท
         area: 100, //หน่วยตารางเมตร
@@ -29,6 +31,20 @@ var myhome = [
     {
         id: 2,
         name: "chayanon",
+        province: "กรุงเทพ",
+        tel: "0954321078",
+        description: "คำอธิบาย",
+        latitude: 56,
+        longitude: 23,
+        price: 5000, //บาท
+        area: 100, //หน่วยตารางเมตร
+        type: "sale", // sale/rent
+        category: "house" // condo/house
+    },
+    {
+        id: 3,
+        name: "chayanon",
+        province: "ภูเก็ต",
         tel: "0954321078",
         description: "คำอธิบาย",
         latitude: 56,
@@ -39,19 +55,45 @@ var myhome = [
         category: "condo" // condo/house
     },
     {
-        id: 3,
+        id: 4,
         name: "chayanon",
+        province: "ภูเก็ต",
         tel: "0954321078",
         description: "คำอธิบาย",
-        latitude: 56,
-        longitude: 23,
+        latitude: 6.991273,
+        longitude: 100.484478,
+        price: 5000, //บาท
+        area: 100, //หน่วยตารางเมตร
+        type: "sale", // sale/rent
+        category: "condo" // condo/house
+    },
+    {
+        id: 5,
+        name: "chayanon",
+        province: "สงขลา",
+        tel: "0954321078",
+        description: "คำอธิบาย",
+        latitude: 6.990543,
+        longitude: 100.489983,
+        price: 5000, //บาท
+        area: 100, //หน่วยตารางเมตร
+        type: "sale", // sale/rent
+        category: "condo" // condo/house
+    },
+    {
+        id: 6,
+        name: "chayanon",
+        province: "สงขลา",
+        tel: "0954321078",
+        description: "คำอธิบาย",
+        latitude: 6.998233,
+        longitude: 100.479395,
         price: 5000, //บาท
         area: 100, //หน่วยตารางเมตร
         type: "sale", // sale/rent
         category: "condo" // condo/house
     }
 ]
-
 
 rest.route('/')
     .get((req, res) => {
